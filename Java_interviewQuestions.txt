@@ -1,0 +1,372 @@
+- Difference between StringBuffer and stringBuilder:
+ StringBuffer:
+1. StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously
+2. is less efficient than StringBuilder.
+3. StringBuffer was introduced in Java 1.0
+
+StringBuilder:
+1. StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
+2. is more efficient than StringBuffer.
+3. StringBuilder was introduced in Java 1.5
+-------------------------------------
+
+difference between consumer and supplier in java
+
+-:> 
+A supplier is any method which takes no arguments and returns a value. Its job is to supply an instance of an expected class.
+
+Whereas, a consumer is a method that consumes some value (as in method argument), and does some operations on them. 
+So a Consumer is any method which takes arguments and returns nothing.
+
+ Predicate represents an anonymous function that accepts one argument and produces a result
+-------------------------------------
+1. how to do garbage collection manually?
+use 'system.gc' command for it.
+-
+2. how to write test case for protected method?
+-> put the protected methods under same package name under test.
+
+3. how to ignore any test case in junit5
+-> @Disabled Annotation
+
+in Junit4:
+@Ignore with the @Test annotation for a test method you wish to skip. 
+
+4. what is the difference between final,finally and finalize?
+
+5. what is the purpose of finally block ?
+
+6. what is the diff between arrayList and vector?
+-> vector is synchronized whereas arraylist not.
+
+7. How to print infinity exception withaout 
+	SOP(10.0/0.0)
+	
+7.what is lamda expression
+8.diff b/w array and arraylist
+9.diff b/w abstract and interface
+10. string is threadsafe?
+-> 
+Since String is immutable in Java, it's inherently thread-safe
+
+11. ways to convert string to integer
+	-> 
+	Integer.parseInt, Integer.valueOf()
+	
+12.serialization and deserializtion -> pending
+
+13. sleep and wait difference
+->
+The fundamental difference is that wait() is non static method of Object and sleep() is a static method of Thread.
+The major difference is that wait() releases the lock while sleep() doesn’t release any lock while waiting.
+wait() is used for inter-thread communication while sleep() is used to introduce a pause on execution, generally.
+wait() should be called from inside synchronise or else we get an IllegalMonitorStateException, while sleep() can be called anywhere.
+To start a thread again from wait(), you have to call notify() or notifyAll() indefinitely. As for sleep(), the thread gets started definitely 
+after a specified time interval.
+
+
+14. immutable objects in java: 
+	-> String,Boolean
+	
+15. can we store double value into long
+->
+	We cannot store a double value into a long type variable without casting because the range of double is greater than long and that’s why we
+	need to type cast.
+	
+16.convert string array into arrayList
+->
+	String[] words= new String[]{"ace","boom","crew","dog","eon"};
+List<String> wordList = Arrays.asList(words);
+
+
+
+SQL:
+
+create a view
+remove duplicate record from the table
+
+select salary from employeee where(select sum(salary) total from employee where total > 12000)
+
+1. functional interface
+-> An Interface that contains exactly one abstract method is known as functional interface. 
+It can have any number of default, static methods but can contain only one abstract method. It can also declare methods of object class.
+
+2. what is microservice architecture and its advantages:
+Advantages:
+	-Microservices are self-contained, independent deployment module.
+	- The cost of scaling is comparatively less than the monolithic architecture.
+	- Microservices are independently manageable services. It can enable more and more services as the need arises. 
+	 It minimizes the impact on existing service.
+	- It is possible to change or upgrade each service individually rather than upgrading in the entire application.
+	
+Disadvantages:
+	- Microservices has all the associated complexities of the distributed system.
+	- There is a higher chance of failure during communication between different services.
+	- Difficult to manage a large number of services.
+	- The developer needs to solve the problem, such as network latency and load balancing.
+	- Complex testing over a distributed environment.
+
+3. in which scenario we should use abstract and interface
+4.jav8 features
+5. what is terminal operation in java8
+
+6. what is optional.ofNullable
+The ofNullable() method of java.util.Optional class in Java is used to get an instance of 
+this Optional class with the specified value of the specified type.
+ If the specified value is null, then this method returns an empty instance of the Optional class.
+ 
+ 
+7. what is the use of stream():
+You can use stream to filter, collect, print, and convert from one data structure to other etc.
+
+8.query parameter and path parameter
+9. docker file 
+10. what is content-type and accept
+11. DIfference between hashmap and concurrenthashmap:
+	- HashMap is the Class which is under Traditional Collection and ConcurrentHashMap is a Class which is under Concurrent Collections.
+	- HashMap is non-Synchronized in nature i.e. HashMap is not Thread-safe whereas ConcurrentHashMap is Thread-safe in nature.
+    - HashMap performance is relatively high because it is non-synchronized in nature and any number of threads can perform simultaneously. 
+			But ConcurrentHashMap performance is low sometimes because sometimes Threads are required to wait on ConcurrentHashMap.
+    - While one thread is Iterating the HashMap object, if other thread try to add/modify the contents of Object then we will get Run-time 
+		exception saying ConcurrentModificationException.Whereas In ConcurrentHashMap we wont get any exception while performing any modification
+		at the time of Iteration.
+    - In HashMap, null values are allowed for key and values, whereas in ConcurrentHashMap null value is not allowed for key and value, otherwise 
+		we will get Run-time exception saying NullPointerException.
+		
+
+---------------------------
+12. Difference between Composition and inheritance:
+Ans. Composition - has-a relationship between objects.
+Inheritance - is-a relationship between classes.
+
+Composition - Composing object holds a reference to composed objects and hence relationship is loosely bound.
+Inheritance - Derived object carries the base class definition in itself and hence its tightly bound.
+
+Composition - Used in Dependency Injection
+Inheritance - Used in Runtime Polymorphism
+
+Composition - Single class objects can be composed within multiple classes.
+Inheritance - Single class can only inherit 1 Class.
+
+Composition - Its the relationship between objects.
+Inheritance - Its the relationship between classes.
+
+---------------------------
+ What is the difference between Encapsulation and Abstraction?	Core Java
+Ans. 1.Abstraction solves the problem at design level while encapsulation solves the problem at implementation level
+
+2.Abstraction is used for hiding the unwanted data and giving relevant data. while Encapsulation means hiding the code and data into a single unit to protect the data from outside world.
+
+3. Abstraction lets you focus on what the object does instead of how it does it while Encapsulation means hiding the internal details or mechanics of how an object does something.
+
+4.For example: Outer Look of a Television, like it has a display screen and channel buttons to change channel it explains Abstraction but Inner Implementation detail of a Television how CRT and Display Screen are connect with each other using different circuits , it explains Encapsulation.
+
+
+
+
+
+
+list of employee 
+20 employee
+count of male and female emp with the help of java stream api
+
+List<String> emp = ArrayList()
+emp.stream().foreach(e->{
+int mcount=0;
+int fcount
+if(e=='M')
+     count++;})
+======================
+scope in springboot
+differece b/w RestController & Controller
+collection frameworks
+differece b/w sets and list
+what are predicate
+what are marker interface & functional interface
+	
+->	javadeeplearning app 
+
+creating the object for interface
+custom exception
+Array and Arraylist differece 
+
+-> apolo project
+==================================
+JAVA 8:
+
+lamda expression:
+A lambda expression is an anonymous function without a declaration.
+• It provides inline implementation for a functional interface.
+• It eliminates the need of creating a class that defines the method from functional interface.
+• A functional interface is an interface that has only one method declared. E.g. Runnable interface, Comparator interface etc
+
+Syntax:
+(parameter)->expression body
+
+
+-> Method references:
+ - the operator used to specify the reference is double colon '::'
+ - can be used for:
+	- instance method:  instance_name :: method_name
+	- static method: class_name::metjod_name
+	- constructor: class_nmae::new
+	
+----------------------
+Difference between lambda expression and method reference
+
+lamda expression:
+• Lambda expression allows to provide inline function definition.
+• Allows to pass the parameters at the time of invocation.
+• Useful when a particular method from a functional interface is not frequently required to be invoked.
+
+Method reference:
+• Method reference allows to invoke predefined method.
+• Does not allow to pass parameters.
+• Useful when a particular method from a functional interface is frequently required to be invoked.
+
+----------------------------
+DEFAULT Method:
+- support the backword compatibility
+-  If a new method needs to be added in an interface, all classes implementing that interface must provide definition. Failing to 
+do so will cause compilation error.
+• With default methods, interface can declare non abstract methods.
+• So interfaces will provide a function with definition which will be available for all classes implementing that interface. This will 
+not cause compilation error as newly added method is not only declared but define
+
+e.g 
+public insterface interface_example{
+public default void newMethod(){s.o.p("");}
+}
+-------------------
+Functional interface:(java.util.function):
+- an interface with single abstract method(SAM)
+Function
+Represents a function that accepts one argument and produces a result.
+• Consumer
+Represents an operation that accepts a single input argument and returns no result.
+• Predicate
+Represents a predicate (boolean-valued function) of one argument.
+• Supplier
+Represents a supplier of results
+-------------------------
+Stream (java.util.stream)
+
+- stream is a sequence of elements from a source that supports data processing operations.
+- Intermediate operations:
+	- operations like sream.filter and stream.map
+	- always return new stream
+	- stateless : filter and map
+	- stateful:  distinct and sorted
+- Terminal operations:
+
+------------------------
+OPTIONAL:
+
+The null reference is the source of many problems because it is often used to denote the absence of a value. Java SE 8
+introduces a new class called java.util.Optional that can alleviate some of these problems.
+Characteristics of Optional class:-
+• Represents a container object which may or may not contain a non-null value.
+• Provides isPresent() method which will return true If a value is present
+• Provides get() method to return the value.
+• Additional methods that depend on the presence or absence of a contained value are provided, such as orElse() (return a
+default value if value not present) and ifPresent()
+
+--------------------
+Date Time API(java.time)
+
+Thread safety by providing immutable classes
+• Domain driven design
+- Different use cases for date and time
+• Separation of chronologies
+- API allows people to work with different calendaring systems like Japan / Thailand etc.
+
+
+Data Engineer 
+scala + spark
+
+https://www.youtube.com/watch?v=z8XgBCrTVY0&list=PLqq-6Pq4lTTbx8p2oCgcAQGQyqN8XeA1x&index=20
+
+JPA: Java Persistence API:
+	- Object Relational mapping
+	
+	
+Microservice:
+https://www.youtube.com/watch?v=o36vWQCRrp0
+23 video
+
+https://www.youtube.com/watch?v=y8IQb4ofjDo&list=PLqq-6Pq4lTTZSKAFG6aCDVDP86Qx4lNas 
+
+sprinf security:
+https://www.youtube.com/watch?v=sm-8qfMWEV8&list=PLqq-6Pq4lTTYTEooakHchTGglSvkZAjnE
+
+
+java brains:
+https://www.youtube.com/results?search_query=java+brains+microservices
+
+hacker rank:
+https://www.hackerrank.com/domains/tutorials/30-days-of-code
+https://www.programmerinterview.com/java-questions/why-have-a-private-constructor/
+
+
+Skills to become scala developer
+
+https://www.youtube.com/watch?v=kVDgurLi-CA
+
+
+
+Java lamda expression:
+https://www.youtube.com/watch?v=gpIUfj3KaOc&list=PLqq-6Pq4lTTa9YGfyhyW2CqdtW9RtY-I3
+
+---------------------------------------------------------------------------------------------------
+1. 
+- what is concurrent hasmap and normal hashmap
+- internal working of hashmap
+- what is actuators
+- what is the difference between GET and POST
+- what is the diff between yield and wait in threading 
+--------------------------------------------------------------------------------------------------------
+2.
+java8 features
+- stream API type
+- exception handling
+- customized exception handling
+- types of join
+- diff annotations in springboot
+- diff between monoletic and miceroservices
+- methods of rest api
+-what is checked and unchecked exception
+----------------------------------------------------------------------------------------------------------
+3
+- difference between arrayList and linkedLiest
+- diffference between stack memory and heap memory
+- what is comparable and comparator
+- what is bean
+----------------------------------------------------------------------------------------------------------
+4.
+- Write the Shell script logic for to get the 2nd non repeated char from string
+- Find 2nd duplicate no from array
+
+- what is view
+- what is primary and unique key
+- what is join
+- write a query for left join
+- how to delete duplicate records from the table
+
+- what is the command in unix to get the most used IP from log
+- how to delete the line and copy line in unix using 'vi' editor
+
+- can we override static and private method in java
+- how to write the test case for private method
+- what is JVM and how many memory assigned by it
+- what is JIT compiler
+- what is stream API in lamda expression
+- internal working of hashmap
+- differenc between checked and unchecked exception
+- what is hashing:
+		It is the process of converting an object into an integer value. The integer value helps in indexing and faster searches.
+		
+		
+		
+		
+		IMP docs:
+		https://toolsqa.com/postman/postman-tutorial/
